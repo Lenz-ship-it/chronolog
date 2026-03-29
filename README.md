@@ -1,38 +1,26 @@
-# sv
+# 📝 Daily Journal Tracker
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A simple journaling app to help you reflect, understand your emotions, and build a consistent habit of self-awareness.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+A quiet place to slow things down.  
+Not everything needs to be organized perfectly, sometimes you just need somewhere to write what the day felt like.  
+This app is built around that idea, letting you capture thoughts, emotions, and small details that usually get lost.
 
-```sh
-# create a new project in the current directory
-npx sv create
+<p align="center">
+  <img src="./docs/calendar.png" width="30%" />
+  <img src="./docs/journal.png" width="30%" />
+  <img src="./docs/journal-filter.png" width="30%" />
+</p>
 
-# create a new project in my-app
-npx sv create my-app
-```
+Over time, these small entries start to form a pattern.  
+You begin to notice what affects your mood, what you’re grateful for, and what stays with you longer than expected.
 
-## Developing
+And sometimes, all it takes is a single sentence to shift your perspective.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+<p align="center">
+  <img src="./docs/quote.png" width="60%" />
+</p>
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+---
