@@ -8,10 +8,15 @@ A quiet place to slow things down.
 Not everything needs to be organized perfectly, sometimes you just need somewhere to write what the day felt like.  
 This app is built around that idea, letting you capture thoughts, emotions, and small details that usually get lost.
 
+
+
 <p align="center">
-  <img src="./docs/calendar.png" width="30%" />
-  <img src="./docs/journal.png" width="30%" />
-  <img src="./docs/journal-filter.png" width="30%" />
+  <img src="./docs/calendar.png" height="250" />
+  <img src="./docs/journal.png" height="250" />
+</p>
+
+<p align="center">
+  <img src="./docs/journal-filter.png" width="40%" />
 </p>
 
 Over time, these small entries start to form a pattern.  
