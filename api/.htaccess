@@ -1,0 +1,50 @@
+# ===========================
+# 🌿 API Rewrite & Security
+# ===========================
+
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /api/
+
+    # ---------------------------
+    # Handle CORS Preflight
+    # ---------------------------
+    <IfModule mod_headers.c>
+        Header always set Access-Control-Allow-Origin "*"
+        Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+        Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    </IfModule>
+
+    # Allow OPTIONS requests to return 200 OK immediately
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^ - [R=200,L]
+
+    # ---------------------------
+    # Route Simplified Endpoints
+    # ---------------------------
+
+    # Example:
+    # /api/auth?action=login       → Auth.php?action=login
+    # /api/journal?action=create   → JournalCRUD.php?action=create
+
+    RewriteRule ^auth/?$ Auth.php [L,QSA]
+    RewriteRule ^journal/?$ JournalCRUD.php [L,QSA]
+
+    # Default fallback: return 404 if file not found
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ - [R=404,L]
+</IfModule>
+
+# ---------------------------
+# 🧱 Security Hardening
+# ---------------------------
+# Disable directory listing
+Options -Indexes
+
+# Deny access to sensitive files
+<FilesMatch "\.(env|sql|config|bak|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
