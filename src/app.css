@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+@import '@fortawesome/fontawesome-free/css/all.min.css'; 
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+
+:root {
+  --color-accent: #a8e0da;
+  --color-accent2: #f4a5a5;
+  --color-border: #e8d5c4;
+  --color-bg: #fef9f3;
+  --color-text: #5e5046;
+}
+
+body {
+  font-family: "Comic Sans MS", sans-serif;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #b8dbd9 100%);
+}
+
+button, a {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover, a:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* Music Player */
+
+.play-btn {
+  position: absolute;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#ff6347, #ff6347);
+  cursor: pointer;
+  outline: none;
+}
+
+.play-btn::before {
+  content: "";
+  position: absolute;
+  width: 93%;
+  height: 93%;
+  background-color: #000;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-btn:checked {
+  animation: borderAnimate 700ms ease-in-out 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes borderAnimate {
+  0% {
+    transform: rotate(0);
+    background: conic-gradient(#ff6347, transparent 20%);
+  }
+
+  80% {
+    background: conic-gradient(#ff6347, transparent 90%);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    background: conic-gradient(#ff6347, #ff6347);
+  }
+}
+
+.music-btn {
+  position: fixed;
+  right: 2.25rem;
+  bottom: 2.25rem;
+  z-index: 9999;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fef9f3;
+  border: 2px solid #e8d5c4;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  font-size: 22px;
+  color: #f4a5a5;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.07);
+  background: #fff4ea;
+  color: #f09090;
+}
